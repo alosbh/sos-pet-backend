@@ -80,7 +80,7 @@ namespace ApiSOSPet.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Auth credenciais)
         {
-            var usuario = _context.Usuarios.Where(e => e.Email == credenciais.Email).FirstOrDefault();
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(e => e.Email == credenciais.Email);
 
             if (usuario == null)
             {
