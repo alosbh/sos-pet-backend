@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiSOSPet;
+using Microsoft.Data.SqlClient;
+using System.Net;
 
 namespace ApiSOSPet.Controllers
 {
@@ -42,8 +44,7 @@ namespace ApiSOSPet.Controllers
         }
 
         // PUT: api/Usuarios/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(long id, Usuario usuario)
         {
@@ -74,13 +75,36 @@ namespace ApiSOSPet.Controllers
         }
 
         // POST: api/Usuarios
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+
+            catch(DbUpdateException ex)
+            {
+                SqlException innerException = ex.InnerException as SqlException;
+                if (innerException != null && innerException.Number == 2601)
+                {
+                    return BadRequest(
+                        new
+                        {
+                            ErrMsg = "Email ja cadastrado no sistema.",
+                            err = true
+                        }); 
+                    
+                    
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
