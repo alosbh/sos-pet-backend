@@ -90,12 +90,13 @@ namespace ApiSOSPet.Controllers
                 SqlException innerException = ex.InnerException as SqlException;
                 if (innerException != null && innerException.Number == 2601)
                 {
-                    return BadRequest(
-                        new
-                        {
-                            ErrMsg = "Email ja cadastrado no sistema.",
-                            err = true
-                        }); 
+                    return StatusCode(409);
+                    //return BadRequest(
+                    //    new
+                    //    {
+                    //        ErrMsg = "Email ja cadastrado no sistema.",
+                    //        err = true
+                    //    }); 
                     
                     
                 }

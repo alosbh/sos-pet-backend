@@ -87,8 +87,7 @@ namespace ApiSOSPet.Controllers
                 return BadRequest(
                        new
                        {
-                           ErrMsg = "Usuario não encontrado",
-                           err = true
+                           message = "Usuario não encontrado"
                        });
             }
             else if(usuario.Senha != credenciais.Senha)
@@ -96,8 +95,7 @@ namespace ApiSOSPet.Controllers
                 return BadRequest(
                         new
                         {
-                            ErrMsg = "Senha Incorreta",
-                            err = true
+                            message = "Senha Incorreta"
                         });
             }
             else
