@@ -8,16 +8,23 @@ namespace ApiSOSPet
 {
     public partial class Auth
     {
-        [Key]
-        
+        public Auth()
+        {
+            Ocorrencia = new HashSet<Ocorrencia>();
+        }
+
+ 
         [Required]
         [Column("email")]
         [StringLength(50)]
         public string Email { get; set; }
-        
+ 
         [Required]
         [Column("senha")]
         [StringLength(50)]
         public string Senha { get; set; }
+
+        [InverseProperty("IdusuarioNavigation")]
+        public virtual ICollection<Ocorrencia> Ocorrencia { get; set; }
     }
 }

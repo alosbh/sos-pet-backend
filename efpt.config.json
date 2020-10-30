@@ -14,6 +14,14 @@
    "Tables": [
       {
          "HasPrimaryKey": true,
+         "Name": "[dbo].[Animais]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Ocorrencias]"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "[dbo].[Usuarios]"
       }
    ],

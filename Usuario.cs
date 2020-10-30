@@ -8,6 +8,11 @@ namespace ApiSOSPet
 {
     public partial class Usuario
     {
+        public Usuario()
+        {
+            Ocorrencia = new HashSet<Ocorrencia>();
+        }
+
         [Key]
         [Column("id")]
         public long Id { get; set; }
@@ -27,5 +32,8 @@ namespace ApiSOSPet
         [Column("senha")]
         [StringLength(50)]
         public string Senha { get; set; }
+
+        [InverseProperty("IdusuarioNavigation")]
+        public virtual ICollection<Ocorrencia> Ocorrencia { get; set; }
     }
 }
