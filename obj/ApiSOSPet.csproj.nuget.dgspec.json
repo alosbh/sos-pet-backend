@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\ApiSOSPet.csproj": {}
+    "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\ApiSOSPet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\ApiSOSPet.csproj": {
+    "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\ApiSOSPet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\ApiSOSPet.csproj",
+        "projectUniqueName": "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\ApiSOSPet.csproj",
         "projectName": "ApiSOSPet",
-        "projectPath": "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\ApiSOSPet.csproj",
+        "projectPath": "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\ApiSOSPet.csproj",
         "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\obj\\",
+        "outputPath": "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

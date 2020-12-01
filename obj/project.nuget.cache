@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iie3vPiQx12jyHb2vHxLIJTq9qASWoPSkQWSEQ8Ytnclnk5EgTQlsHLQEkJEATJDv7JfbUZ3EuvdNV5yZ86ujg==",
+  "dgSpecHash": "a3uMiLuKWNEK3ahg8nhCWYm+xBFJ18bcJ3wcls4DdS3J5nfSDg0ajXNUC1uarJ0ppIUSXRw3/38bMDFQUC3dfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rafael\\Downloads\\sos-pet-backend-master\\sos-pet-backend-master\\ApiSOSPet.csproj",
+  "projectFilePath": "C:\\Users\\Rafael\\Desktop\\sos-pet-backend-rafael_siqueira\\sos-pet-backend\\ApiSOSPet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Rafael\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
