@@ -155,12 +155,23 @@ namespace ApiSOSPet.Controllers
 
             foreach (var item in ocorrencia)
             {
-
-                if (item.Status.ToLower() == id)
+                if (id.ToLower() == "encontrados")
                 {
-                    total++;
+                    if (item.Status.ToLower() == "localizados")
+                    {
+                        total++;
+                    }
+                    if (item.Status.ToLower() == "procurados")
+                    {
+                        total++;
+                    }
                 }
-
+                else {
+                    if (item.Status.ToLower() == id)
+                    {
+                        total++;
+                    }
+                }
             }
 
             return "{" + "total" + '"' + ":" + '"' + total + '"' + "}";
