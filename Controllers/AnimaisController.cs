@@ -25,6 +25,7 @@ namespace ApiSOSPet.Controllers
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimais()
         {
             return await _context.Animais.ToListAsync();
+           
         }
 
         // GET: api/Animals/5

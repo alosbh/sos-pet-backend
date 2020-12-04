@@ -9,6 +9,8 @@ using ApiSOSPet;
 using Microsoft.AspNetCore.Routing.Template;
 using System.Collections;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace ApiSOSPet.Controllers
 {
@@ -23,10 +25,26 @@ namespace ApiSOSPet.Controllers
             _context = new SospetContext();
         }
 
-        // GET: api/Ocorrencias
+        //// GET: api/Ocorrencias
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    /*return await _context.Ocorrencias.ToListAsync();*/
+        //    var query = _context.Ocorrencias
+        //            .Join(
+        //            _context.Animais,
+        //            ocorrencia => ocorrencia.Idanimal,
+        //            animal => animal.Id,
+        //            (ocorrencia, animal) => new { animal.Especie, animal.Porte, animal.Raca, ocorrencia.Descricao, ocorrencia.Idocorr, ocorrencia.latitude, ocorrencia.longitude }).ToList();
+
+        //    return Ok(query);
+
+        //}
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ocorrencia>>> GetOcorrencias()
         {
+            
             return await _context.Ocorrencias.ToListAsync();
         }
 
@@ -109,7 +127,9 @@ namespace ApiSOSPet.Controllers
         [HttpPost]
         public async Task<ActionResult<Ocorrencia>> PostOcorrencia(Ocorrencia ocorrencia)
         {
+            
             _context.Ocorrencias.Add(ocorrencia);
+            
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetOcorrencia", new { id = ocorrencia.Idocorr }, ocorrencia);

@@ -16,6 +16,8 @@ namespace ApiSOSPet
         {
         }
 
+        public virtual DbSet<Animal> Animais { get; set; }
+        public virtual DbSet<Ocorrencia> Ocorrencias { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +31,42 @@ namespace ApiSOSPet
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Animal>(entity =>
+            {
+                entity.Property(e => e.Especie).IsUnicode(false);
+
+                entity.Property(e => e.Foto).IsUnicode(false);
+
+                entity.Property(e => e.Porte)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.Raca).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Ocorrencia>(entity =>
+            {
+                entity.HasKey(e => e.Idocorr)
+                    .HasName("PK__Ocorrenc__55437AF47EEAD4DD");
+
+                entity.Property(e => e.Descricao).IsUnicode(false);
+
+                entity.Property(e => e.Status).IsUnicode(false);
+
+                entity.Property(e => e.Tipo).IsUnicode(false);
+
+                entity.HasOne(d => d.IdanimalNavigation)
+                    .WithMany(p => p.Ocorrencia)
+                    .HasForeignKey(d => d.Idanimal)
+                    .HasConstraintName("FK__Ocorrenci__IDani__4AB81AF0");
+
+
+                entity.HasOne(d => d.IdusuarioNavigation)
+                    .WithMany(p => p.Ocorrencia)
+                    .HasForeignKey(d => d.Idusuario)
+                    .HasConstraintName("FK__Ocorrenci__IDusu__49C3F6B7");
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 

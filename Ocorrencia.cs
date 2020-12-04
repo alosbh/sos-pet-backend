@@ -23,10 +23,10 @@ namespace ApiSOSPet
         [Column("descricao")]
         [StringLength(500)]
         public string Descricao { get; set; }
-        [Column("localizacao_lat")]
-        public double LocalizacaoLat { get; set; }
-        [Column("localizacao_long")]
-        public double LocalizacaoLong { get; set; }
+        [Column("latitude")]
+        public double latitude { get; set; }
+        [Column("longitude")]
+        public double longitude { get; set; }
         [Column("data_ocorrencia", TypeName = "datetime")]
         public DateTime? DataOcorrencia { get; set; }
         [Column("IDanimal")]
